@@ -1,0 +1,131 @@
+html {
+  background: green;
+}
+
+.dark {
+  background: maroon;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+#warning {
+  display: none;
+  padding: 16px;
+  font: normal 24px/1.5 sans-serif;
+}
+
+#warning button {
+  font-size: inherit;
+  padding: 1em;
+  margin-left: .5em;
+}
+
+h1 {
+  color: white;
+  font: bold 48px/1.0 "Times New Roman", serif;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 16px black;
+}
+
+.dark h1 {
+  color: black;
+  text-shadow: 0 0 16px white;
+}
+
+h1:first-child {
+  margin: 32px 0 16px;
+}
+
+h1:last-child {
+  margin: 16px 0 32px;
+  transform: scaleX(-1);
+}
+
+#box {
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+  height: 500px;
+  overflow: hidden;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 0 16px black;
+}
+
+.dark #box {
+  background: black;
+  box-shadow: 0 0 16px white;
+}
+
+#box > * {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  width: 500px;
+  height: 500px;
+}
+
+#box > * > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.dark #box > * > img {
+  display: none;
+}
+
+#box > * > div {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -.5em;
+  width: 100%;
+  color: white;
+  font: bold 120px/1.0 "Verdana", sans-serif;
+  text-align: center;
+  text-shadow: 0 0 16px black;
+  text-transform: uppercase;
+}
+
+.dark #box > * > div {
+  display: block;
+}
+
+#elf {
+  animation:
+    move 2s ease-in-out infinite alternate,
+    flip 4s linear infinite reverse,
+    zoom 2s -1s ease-in-out infinite alternate;
+}
+
+#shelf {
+  animation:
+    move 2s ease-in-out infinite alternate-reverse,
+    flip 4s linear infinite normal,
+    zoom 2s -1s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes move {
+  from { top: -110px; }
+  to { top: 110px; }
+}
+
+@keyframes flip {
+  from { z-index: 1; }
+  to { z-index: 2; }
+}
+
+@keyframes zoom {
+  from { transform: scale(0.9); }
+  to { transform: scale(1.1); }
+}
